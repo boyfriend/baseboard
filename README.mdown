@@ -1,0 +1,8 @@
+# Baseboard
+## Barebones Tumblr theme
+
+Baseboard is simple Tumblr theme with markup but no style.
+
+Do whatever the fuck you want with it. If you ask me for permission, I will say no, just because you inconvenienced me by asking.
+
+Shouts to [http://www.tumblr.com/theme/3357](this theme) and [http://www.tumblr.com/themes/by/erichu](this guy), for the theme which I transcribed to create Baseboard.
