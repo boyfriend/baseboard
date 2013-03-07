@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+    <title>{block:PostTitle} {PostTitle} - {/block:PostTitle}{Title}</title>
+
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <meta name="viewport"  content="width=660"/>
+    <link rel="apple-touch-icon" href="{PortraitURL-128}"></link>
+
+  </head>
+
+  <body>
+    <header id="header">
+      <h1><a href="/">{Title}</a></h1>
+
+      {block:Description}
+        <p class="description">
+          {Description}
+        </p>
+      {/block:Description}
+    </header>
+
+    <div class="articles">
+      {block:Posts}
+        {block:Quote}
+        <article class="quote">
+          <h2>"{Quote}"</h2>
+          {block:Source}<p class="source">{Source}</p>{/block:Source}
+            <a class="metadata" href="{Permalink}">{NoteCount}{block:Date} @ {TimeAgo}{/block:Date}</a>
+        </article>
+        {block:Quote}
+
+        {block:Photo}
+          <article class="photo">
+            {LinkOpenTag}
+              <img src="{PhotoURL-1280}" alt="{PhotoAlt}" />
+            {LinkCloseTag}
+
+            {block:Caption}
+              <p class="caption">{Caption}</p>
+            {/block:Caption}
+
+            <a class="metadata" href="{Permalink}">{NoteCount}{block:Date} @ {TimeAgo}{/block:Date}</a>
+          </article>
+        {/block:Photo}
+
+        {block:Video}
+          <article class="video">
+            {VideoEmbed-700}
+
+            {block:Caption}
+              <p class="caption">{Caption}</p>
+            {/block:Caption}
+
+            <a class="metadata" href="{Permalink}">{NoteCount}{block:Date} @ {TimeAgo}{/block:Date}</a>
+          </article>
+        {/block:Video}
+
+        {block:Link}
+          <article class="link">
+            <h2><a href="{URL}" {Target}>{Name}</a></h2>
+
+            {block:Description}
+              <p>{Description}</p>
+            {/block:Description}
+
+            <a class="metadata" href="{Permalink}">{NoteCount}{block:Date} @ {TimeAgo}{/block:Date}</a>
+          </article>
+        {/block:Link}
+
+        {block:Chat}
+          <article class="chat">
+            {block:Title}
+              <h2>{Title}</h2>
+            {/block:Title}
+
+            <ul>
+              {block:Lines}
+                <li class="member-{UserNumber}">
+                  {block:Label}<span class="label">{Label}</span>{/block:Label}
+                  {Line}
+                </li>
+              {/block:Lines}
+            </ul>
+            <a class="metadata" href="{Permalink}">{NoteCount}{block:Date} @ {TimeAgo}{/block:Date}</a>
+          </article>
+        {/block:Chat}
+
+        {block:Text}
+          <article class="text">
+            {block:Title}
+              <h2>{Title}</h2>
+            {/block:Title}
+
+            <div class="text-body">
+              {Body}
+            </div>
+
+            <a class="metadata" href="{Permalink}">{NoteCount}{block:Date} @ {TimeAgo}{/block:Date}</a>
+          </article>
+        {/block:Text}
+
+        {block:Audio}
+          <article class="audio">
+            {AudioPlayerGrey}
+
+            {block:Caption}
+              <p class="caption">{Caption}</p>
+            {/block:Caption}
+
+            <a class="metadata" href="{Permalink}">{NoteCount}{block:Date} @ {TimeAgo}{/block:Date}</a>
+          </article>
+        {/block:Audio}
+      {/block:Posts}
+    </div>
+
+    {block:Pagination}
+      <div class="pagination">
+        {block:NextPage}
+          <a href="{NextPage}">Back in Time</a>
+        {/block:NextPage}
+
+        <p class="pages">{CurrentPage} out of {TotalPages}</p>
+
+        {block:PreviousPage}
+          <a href="{PreviousPage}">Forward in Time</a>
+        {/block:PreviousPage}
+      </div>
+    {/block:Pagination}
+
+    {block:PermalinkPagination}
+      <div class="pagination">
+        {block:NextPage}
+          <a href="{NextPage}">Back in Time</a>
+        {/block:NextPage}
+
+        <p class="pages">{CurrentPage} out of {TotalPages}</p>
+
+        {block:PreviousPage}
+          <a href="{PreviousPage}">Forward in Time</a>
+        {/block:PreviousPage}
+      </div>
+    {/block:PermalinkPagination}
+
+    <footer>
+      <p class="copyright"></p>
+    </footer>
+  </body>
+</html>
